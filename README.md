@@ -5,11 +5,25 @@
   <p align="center">
     Singapore Management University
     <br>
-    <a href="https://www.ijcai.org/proceedings/2023/0601.pdf">[Paper]</a>
+    <a href="https://aaai.org/aaai-conference/">[Paper]</a>
   </p>
 </p>
 
+![image](figures/UTSD.png#pic_center)
+
 
 ## 1. Introduction
-Agent decision-making using Reinforcement Learning (RL) heavily relies on either a model or simulator of the environment (e.g., moving in an 8x8 maze with three rooms, or playing Chess on an 8x8 board). Due to this dependence, small changes in the environment (e.g., positions of obstacles in the maze, size of the board) can severely affect the effectiveness of the policy learned by the agent. To that end, existing work has proposed the Unsupervised Environment Design (UED) framework to train RL agents on an adaptive curriculum of environments (generated automatically) to improve performance on out-of-distribution (OOD) test scenarios. Specifically, existing research in UED has employed the potential for the agent to learn in an environment (captured using *regret*) as the key factor in selecting the next environment(s) to train the agent. However, such a mechanism can select similar environments (with a high potential to learn) thereby making agent training redundant in all but one of those environments. To that end, we provide a principled approach to adaptively identify diverse environments based on a novel distance measure relevant to environment design. We empirically demonstrate the versatility and effectiveness of our method in comparison to multiple leading approaches for unsupervised environment design on three distinct benchmark problems used in literature.
+To train generalizable Reinforcement Learning (RL) agents, researchers recently proposed the Unsupervised Environment Design (UED) framework, in which a teacher agent creates a very large number of training environments and a student agent trains on the experiences in these environments to be robust against unseen testing scenarios. For example, to train a student to master the “stepping over stumps” task, the teacher will create numerous training environments with varying stump heights and shapes. In this paper, we argue that UED neglects training efficiency and its need for very large number of environments (henceforth referred to as infinite horizon training) makes it less suitable to training robots and non-expert humans. In real-world applications where either creating new training scenarios is expensive or training efficiency is of critical importance, we want to maximize both the learning efficiency and learning outcome of the student. To achieve efficient finite horizon training, we propose a novel Markov Decision Process (MDP) formulation for the teacher agent, referred to as Unsupervised Training Sequence Design (UTSD). Specifically, we encode salient information from the student policy (e.g., behaviors and learning progress) into the teacher’s state space, enabling the teacher to closely track the student’s learning progress and consequently discover the optimal training sequences with finite lengths. Additionally, we explore the teacher’s efficient adaptation to unseen students at test time by employing the context-based meta-learning approach, which leverages the teacher’s past experiences with various students. Finally, we empirically demonstrate our teacher’s capability to design efficient and effective training sequences for students with varying capabilities.
 
+
+## 2. Background
+To train generali
+
+
+## 3. Method
+To train generali
+
+
+
+## Acknowledgement
+This research/project is supported by the National Research Foundation Singapore and DSO National Laboratories under the AI Singapore Programme (AISG Award No: AISG2-RP- 2020-017).
